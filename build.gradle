@@ -1,0 +1,32 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    repositories{
+        google()
+        maven { url 'http://10.10.10.78:8081/repository/maven-public/' }
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.2.0'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.31'
+        classpath 'com.mockuai.androidx:plugin-zone:0.0.1-SNAPSHOT'
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+
+    configurations.all {
+        //gradle 本地缓存策略 秒seconds 分钟minutes 小时hours
+        resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+    }
+}
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+allprojects {
+    repositories{
+        google()
+        maven { url 'http://10.10.10.78:8081/repository/maven-public/' }
+        mavenCentral()
+    }
+}
