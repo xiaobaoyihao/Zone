@@ -54,6 +54,6 @@ dependencies {
     api deps.kotlin_stdlib_jdk8
     api deps.kotlin_reflect
 
-    implementation project(":zone-runtime")
+    api project(":zone-runtime")
 
 }
