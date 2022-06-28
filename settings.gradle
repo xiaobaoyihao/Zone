@@ -1,2 +1,3 @@
 rootProject.name = "Zone"
 include ':app'
+include ':zone-runtime'
