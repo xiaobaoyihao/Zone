@@ -23,7 +23,7 @@ out/
 .idea/
 build/
 
-.repos/
+repos/
 
 # Local configuration file (sdk path, etc)
 local.properties
