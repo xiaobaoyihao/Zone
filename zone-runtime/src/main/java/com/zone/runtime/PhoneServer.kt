@@ -34,7 +34,7 @@ object PhoneServer {
             while (true) {
                 val phoneServerSocket = serverSocket ?: break
                 val socket = phoneServerSocket.accept()
-
+                ServerReplayTask(socket).run()
                 Log.d(
                     TAG_ZONE,
                     "Received connection from IDE: in thread:${Thread.currentThread().name}"
@@ -43,10 +43,10 @@ object PhoneServer {
         }
     }
 
-    class ServerReplayTask(val socket: LocalSocket) : Runnable {
+    class ServerReplayTask(private val socket: LocalSocket) : Runnable {
 
         override fun run() {
-
+            Log.d(TAG_ZONE, "begin to accept msg from pc")
             val input = DataInputStream(socket.inputStream)
             val output = DataOutputStream(socket.outputStream)
 

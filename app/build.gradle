@@ -1,7 +1,10 @@
+plugins{
+    id 'com.zone.plugin' version '0.0.1-SNAPSHOT'
+}
+
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
-apply plugin: 'com.mockuai.plugin.zone'
 
 android {
     compileSdkVersion compile_sdk

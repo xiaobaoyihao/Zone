@@ -1,0 +1,47 @@
+plugins {
+    id 'groovy'
+    id 'java-gradle-plugin'
+    id 'maven-publish'
+    id 'com.gradle.plugin-publish' version '1.0.0'
+}
+
+repositories{
+    mavenCentral()
+}
+
+pluginBundle{
+    website = 'https://github.com/xiaobaoyihao/ZONE'
+    vcsUrl = 'https://github.com/xiaobaoyihao/Zone.git'
+    tags = ['plugins','zone']
+}
+
+
+group = 'com.zone'
+version = '0.0.1-SNAPSHOT'
+gradlePlugin{
+    plugins{
+        zonePlugin{
+            id = 'com.zone.plugin'
+            displayName = ' a zone plugin'
+            description = 'a plugin from build android project'
+            implementationClass = 'com.zone.plugin.ZonePlugin'
+        }
+    }
+}
+
+publishing {
+    repositories {
+        maven {
+            def releaseRepoUrl = "$rootDir/repos/release"
+            def snapshotRepoUrl = "$rootDir/repos/snapshot"
+            url = version.endsWith('SNAPSHOT') ? snapshotRepoUrl : releaseRepoUrl
+        }
+    }
+}
+
+dependencies {
+    compile gradleApi()
+    compile localGroovy() //not needed for Java plugins
+    // other dependencies that your plugin requires
+}
+

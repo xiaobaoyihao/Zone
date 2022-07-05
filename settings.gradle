@@ -1,3 +1,13 @@
+
+pluginManagement{
+    repositories {
+        maven{
+            url = uri("$rootDir/repos/snapshot")
+        }
+        gradlePluginPortal()
+    }
+}
 rootProject.name = "Zone"
 include ':app'
 include ':zone-runtime'
+include ':zone'
