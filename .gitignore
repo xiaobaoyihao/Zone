@@ -22,6 +22,7 @@ out/
 .DS_Store
 .idea/
 build/
+tasks_log.txt
 
 repos/
 

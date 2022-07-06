@@ -1,0 +1,26 @@
+def logFile = new File("tasks_log.txt")
+if (logFile.exists()) {
+    logFile.delete()
+}
+gradle.taskGraph.afterTask(new Action<Task>() {
+    @Override
+    void execute(Task task) {
+        logFile << "-------------------------------------------------------\n"
+        logFile << "task name is :${task.project.name}:${task.name}\n"
+        logFile << "\tinputs\n"
+        try {
+            task.inputs.files.each { File input ->
+                logFile << "\t\t${input.absolutePath}\n"
+            }
+        } catch (Exception ignored) {
+        }
+        logFile << "\toutputs\n"
+        try {
+            task.outputs.files.each { File output ->
+                logFile << "\t\t${output.absolutePath}\n"
+            }
+        } catch (Exception ignored) {
+        }
+        logFile << "-------------------------------------------------------\n"
+    }
+})

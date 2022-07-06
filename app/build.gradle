@@ -1,10 +1,12 @@
-plugins{
+plugins {
     id 'com.zone.plugin' version '0.0.1-SNAPSHOT'
 }
 
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
+apply from: rootProject.file("scripts/exportAppBuildTaskLog.gradle")
+
 
 android {
     compileSdkVersion compile_sdk
