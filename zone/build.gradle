@@ -40,8 +40,9 @@ publishing {
 }
 
 dependencies {
-    compile gradleApi()
-    compile localGroovy() //not needed for Java plugins
-    // other dependencies that your plugin requires
+    implementation gradleApi()
+    implementation localGroovy()
+    implementation "com.android.tools.build:gradle:4.2.0"
+    implementation "org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10"
 }
 

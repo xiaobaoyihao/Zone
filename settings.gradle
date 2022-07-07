@@ -1,6 +1,7 @@
-
 pluginManagement{
     repositories {
+        google()
+        mavenCentral()
         maven{
             url = uri("$rootDir/repos/snapshot")
         }

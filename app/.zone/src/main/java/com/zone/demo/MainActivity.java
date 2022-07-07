@@ -15,6 +15,6 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        Log.d(TAG_ZONE, "main activity world  sdsdsd");
+        Log.d(TAG_ZONE, "main activity");
     }
 }
